@@ -1,5 +1,7 @@
 import React from 'react';
-import {createGlobalStyle} from "styled-components";
+import {createGlobalStyle, ThemeProvider} from "styled-components";
+import ToDoList from "./components/ToDoList";
+import {darkTheme} from "./Theme";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -77,7 +79,10 @@ const GlobalStyle = createGlobalStyle`
 function App() {
     return (
         <>
-            <GlobalStyle/>
+            <ThemeProvider theme={darkTheme}>
+                <GlobalStyle/>
+                <ToDoList/>
+            </ThemeProvider>
         </>
     );
 }
